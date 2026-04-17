@@ -45,6 +45,19 @@ defaults:
 
 robots:
   # Differential-drive robots
+
+  robot0:
+    drive_profile: diff_drive
+    hardware_profile: L298N_diff
+    params:
+      drive:
+        # Field calibration:
+        # commanded 1.00 m -> observed 0.90 m
+        orchestrator_linear_duration_scale: 1.111111
+        # second-pass field calibration:
+        # previous 2.0 caused ~8-10 deg overshoot at 90 deg command
+        orchestrator_angular_duration_scale: 1.2
+
   robot1:
     drive_profile: diff_drive
     hardware_profile: dual_tb6612_diff
