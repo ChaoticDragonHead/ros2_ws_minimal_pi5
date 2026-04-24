@@ -1,0 +1,146 @@
+running egg_info
+creating ../../build/robot_legion_teleop_python/robot_legion_teleop_python.egg-info
+writing ../../build/robot_legion_teleop_python/robot_legion_teleop_python.egg-info/PKG-INFO
+writing dependency_links to ../../build/robot_legion_teleop_python/robot_legion_teleop_python.egg-info/dependency_links.txt
+writing entry points to ../../build/robot_legion_teleop_python/robot_legion_teleop_python.egg-info/entry_points.txt
+writing requirements to ../../build/robot_legion_teleop_python/robot_legion_teleop_python.egg-info/requires.txt
+writing top-level names to ../../build/robot_legion_teleop_python/robot_legion_teleop_python.egg-info/top_level.txt
+writing manifest file '../../build/robot_legion_teleop_python/robot_legion_teleop_python.egg-info/SOURCES.txt'
+reading manifest file '../../build/robot_legion_teleop_python/robot_legion_teleop_python.egg-info/SOURCES.txt'
+writing manifest file '../../build/robot_legion_teleop_python/robot_legion_teleop_python.egg-info/SOURCES.txt'
+running build
+running build_py
+creating /home/jo-jo/ros2_ws_minimal_pi5/build/robot_legion_teleop_python/build
+creating /home/jo-jo/ros2_ws_minimal_pi5/build/robot_legion_teleop_python/build/lib
+creating /home/jo-jo/ros2_ws_minimal_pi5/build/robot_legion_teleop_python/build/lib/robot_legion_teleop_python
+copying robot_legion_teleop_python/unit_executor_action_server.py -> /home/jo-jo/ros2_ws_minimal_pi5/build/robot_legion_teleop_python/build/lib/robot_legion_teleop_python
+copying robot_legion_teleop_python/hardware_interface.py -> /home/jo-jo/ros2_ws_minimal_pi5/build/robot_legion_teleop_python/build/lib/robot_legion_teleop_python
+copying robot_legion_teleop_python/fpv_web_server.py -> /home/jo-jo/ros2_ws_minimal_pi5/build/robot_legion_teleop_python/build/lib/robot_legion_teleop_python
+copying robot_legion_teleop_python/teleop_legion_key.py -> /home/jo-jo/ros2_ws_minimal_pi5/build/robot_legion_teleop_python/build/lib/robot_legion_teleop_python
+copying robot_legion_teleop_python/motor_driver_node.py -> /home/jo-jo/ros2_ws_minimal_pi5/build/robot_legion_teleop_python/build/lib/robot_legion_teleop_python
+copying robot_legion_teleop_python/control_lock_manager.py -> /home/jo-jo/ros2_ws_minimal_pi5/build/robot_legion_teleop_python/build/lib/robot_legion_teleop_python
+copying robot_legion_teleop_python/drive_types.py -> /home/jo-jo/ros2_ws_minimal_pi5/build/robot_legion_teleop_python/build/lib/robot_legion_teleop_python
+copying robot_legion_teleop_python/unit_executor_omni_action_server.py -> /home/jo-jo/ros2_ws_minimal_pi5/build/robot_legion_teleop_python/build/lib/robot_legion_teleop_python
+copying robot_legion_teleop_python/heartbeat_node.py -> /home/jo-jo/ros2_ws_minimal_pi5/build/robot_legion_teleop_python/build/lib/robot_legion_teleop_python
+copying robot_legion_teleop_python/setup.py -> /home/jo-jo/ros2_ws_minimal_pi5/build/robot_legion_teleop_python/build/lib/robot_legion_teleop_python
+copying robot_legion_teleop_python/motor_driver_node_OLD.py -> /home/jo-jo/ros2_ws_minimal_pi5/build/robot_legion_teleop_python/build/lib/robot_legion_teleop_python
+copying robot_legion_teleop_python/unit_executor_diffdrive_action_server.py -> /home/jo-jo/ros2_ws_minimal_pi5/build/robot_legion_teleop_python/build/lib/robot_legion_teleop_python
+copying robot_legion_teleop_python/fpv_camera_mux.py -> /home/jo-jo/ros2_ws_minimal_pi5/build/robot_legion_teleop_python/build/lib/robot_legion_teleop_python
+copying robot_legion_teleop_python/fpv_control_arbiter.py -> /home/jo-jo/ros2_ws_minimal_pi5/build/robot_legion_teleop_python/build/lib/robot_legion_teleop_python
+copying robot_legion_teleop_python/audit_logger.py -> /home/jo-jo/ros2_ws_minimal_pi5/build/robot_legion_teleop_python/build/lib/robot_legion_teleop_python
+copying robot_legion_teleop_python/reset_gz.py -> /home/jo-jo/ros2_ws_minimal_pi5/build/robot_legion_teleop_python/build/lib/robot_legion_teleop_python
+copying robot_legion_teleop_python/drive_profiles.py -> /home/jo-jo/ros2_ws_minimal_pi5/build/robot_legion_teleop_python/build/lib/robot_legion_teleop_python
+copying robot_legion_teleop_python/usb_camera_node.py -> /home/jo-jo/ros2_ws_minimal_pi5/build/robot_legion_teleop_python/build/lib/robot_legion_teleop_python
+copying robot_legion_teleop_python/__init__.py -> /home/jo-jo/ros2_ws_minimal_pi5/build/robot_legion_teleop_python/build/lib/robot_legion_teleop_python
+copying robot_legion_teleop_python/playbook_helpers.py -> /home/jo-jo/ros2_ws_minimal_pi5/build/robot_legion_teleop_python/build/lib/robot_legion_teleop_python
+copying robot_legion_teleop_python/playbook_strategies.py -> /home/jo-jo/ros2_ws_minimal_pi5/build/robot_legion_teleop_python/build/lib/robot_legion_teleop_python
+copying robot_legion_teleop_python/terminal_orchestrator.py -> /home/jo-jo/ros2_ws_minimal_pi5/build/robot_legion_teleop_python/build/lib/robot_legion_teleop_python
+copying robot_legion_teleop_python/playbook_contract.py -> /home/jo-jo/ros2_ws_minimal_pi5/build/robot_legion_teleop_python/build/lib/robot_legion_teleop_python
+copying robot_legion_teleop_python/legion_camera_node.py -> /home/jo-jo/ros2_ws_minimal_pi5/build/robot_legion_teleop_python/build/lib/robot_legion_teleop_python
+creating /home/jo-jo/ros2_ws_minimal_pi5/build/robot_legion_teleop_python/build/lib/robot_legion_teleop_python/robot_legion_teleop_python
+copying robot_legion_teleop_python/robot_legion_teleop_python/teleop_legion_key.py -> /home/jo-jo/ros2_ws_minimal_pi5/build/robot_legion_teleop_python/build/lib/robot_legion_teleop_python/robot_legion_teleop_python
+copying robot_legion_teleop_python/robot_legion_teleop_python/motor_driver_node.py -> /home/jo-jo/ros2_ws_minimal_pi5/build/robot_legion_teleop_python/build/lib/robot_legion_teleop_python/robot_legion_teleop_python
+copying robot_legion_teleop_python/robot_legion_teleop_python/unit_executor_omni_action_server.py -> /home/jo-jo/ros2_ws_minimal_pi5/build/robot_legion_teleop_python/build/lib/robot_legion_teleop_python/robot_legion_teleop_python
+copying robot_legion_teleop_python/robot_legion_teleop_python/unit_executor_diffdrive_action_server.py -> /home/jo-jo/ros2_ws_minimal_pi5/build/robot_legion_teleop_python/build/lib/robot_legion_teleop_python/robot_legion_teleop_python
+copying robot_legion_teleop_python/robot_legion_teleop_python/fpv_camera_mux.py -> /home/jo-jo/ros2_ws_minimal_pi5/build/robot_legion_teleop_python/build/lib/robot_legion_teleop_python/robot_legion_teleop_python
+copying robot_legion_teleop_python/robot_legion_teleop_python/fpv_control_arbiter.py -> /home/jo-jo/ros2_ws_minimal_pi5/build/robot_legion_teleop_python/build/lib/robot_legion_teleop_python/robot_legion_teleop_python
+copying robot_legion_teleop_python/robot_legion_teleop_python/reset_gz.py -> /home/jo-jo/ros2_ws_minimal_pi5/build/robot_legion_teleop_python/build/lib/robot_legion_teleop_python/robot_legion_teleop_python
+copying robot_legion_teleop_python/robot_legion_teleop_python/usb_camera_node.py -> /home/jo-jo/ros2_ws_minimal_pi5/build/robot_legion_teleop_python/build/lib/robot_legion_teleop_python/robot_legion_teleop_python
+copying robot_legion_teleop_python/robot_legion_teleop_python/__init__.py -> /home/jo-jo/ros2_ws_minimal_pi5/build/robot_legion_teleop_python/build/lib/robot_legion_teleop_python/robot_legion_teleop_python
+copying robot_legion_teleop_python/robot_legion_teleop_python/playbook_helpers.py -> /home/jo-jo/ros2_ws_minimal_pi5/build/robot_legion_teleop_python/build/lib/robot_legion_teleop_python/robot_legion_teleop_python
+running install
+running install_lib
+creating /home/jo-jo/ros2_ws_minimal_pi5/install/robot_legion_teleop_python/lib/python3.12/site-packages/robot_legion_teleop_python
+copying /home/jo-jo/ros2_ws_minimal_pi5/build/robot_legion_teleop_python/build/lib/robot_legion_teleop_python/unit_executor_action_server.py -> /home/jo-jo/ros2_ws_minimal_pi5/install/robot_legion_teleop_python/lib/python3.12/site-packages/robot_legion_teleop_python
+copying /home/jo-jo/ros2_ws_minimal_pi5/build/robot_legion_teleop_python/build/lib/robot_legion_teleop_python/hardware_interface.py -> /home/jo-jo/ros2_ws_minimal_pi5/install/robot_legion_teleop_python/lib/python3.12/site-packages/robot_legion_teleop_python
+copying /home/jo-jo/ros2_ws_minimal_pi5/build/robot_legion_teleop_python/build/lib/robot_legion_teleop_python/fpv_web_server.py -> /home/jo-jo/ros2_ws_minimal_pi5/install/robot_legion_teleop_python/lib/python3.12/site-packages/robot_legion_teleop_python
+copying /home/jo-jo/ros2_ws_minimal_pi5/build/robot_legion_teleop_python/build/lib/robot_legion_teleop_python/teleop_legion_key.py -> /home/jo-jo/ros2_ws_minimal_pi5/install/robot_legion_teleop_python/lib/python3.12/site-packages/robot_legion_teleop_python
+copying /home/jo-jo/ros2_ws_minimal_pi5/build/robot_legion_teleop_python/build/lib/robot_legion_teleop_python/motor_driver_node.py -> /home/jo-jo/ros2_ws_minimal_pi5/install/robot_legion_teleop_python/lib/python3.12/site-packages/robot_legion_teleop_python
+copying /home/jo-jo/ros2_ws_minimal_pi5/build/robot_legion_teleop_python/build/lib/robot_legion_teleop_python/control_lock_manager.py -> /home/jo-jo/ros2_ws_minimal_pi5/install/robot_legion_teleop_python/lib/python3.12/site-packages/robot_legion_teleop_python
+copying /home/jo-jo/ros2_ws_minimal_pi5/build/robot_legion_teleop_python/build/lib/robot_legion_teleop_python/drive_types.py -> /home/jo-jo/ros2_ws_minimal_pi5/install/robot_legion_teleop_python/lib/python3.12/site-packages/robot_legion_teleop_python
+copying /home/jo-jo/ros2_ws_minimal_pi5/build/robot_legion_teleop_python/build/lib/robot_legion_teleop_python/unit_executor_omni_action_server.py -> /home/jo-jo/ros2_ws_minimal_pi5/install/robot_legion_teleop_python/lib/python3.12/site-packages/robot_legion_teleop_python
+copying /home/jo-jo/ros2_ws_minimal_pi5/build/robot_legion_teleop_python/build/lib/robot_legion_teleop_python/heartbeat_node.py -> /home/jo-jo/ros2_ws_minimal_pi5/install/robot_legion_teleop_python/lib/python3.12/site-packages/robot_legion_teleop_python
+copying /home/jo-jo/ros2_ws_minimal_pi5/build/robot_legion_teleop_python/build/lib/robot_legion_teleop_python/setup.py -> /home/jo-jo/ros2_ws_minimal_pi5/install/robot_legion_teleop_python/lib/python3.12/site-packages/robot_legion_teleop_python
+copying /home/jo-jo/ros2_ws_minimal_pi5/build/robot_legion_teleop_python/build/lib/robot_legion_teleop_python/motor_driver_node_OLD.py -> /home/jo-jo/ros2_ws_minimal_pi5/install/robot_legion_teleop_python/lib/python3.12/site-packages/robot_legion_teleop_python
+copying /home/jo-jo/ros2_ws_minimal_pi5/build/robot_legion_teleop_python/build/lib/robot_legion_teleop_python/unit_executor_diffdrive_action_server.py -> /home/jo-jo/ros2_ws_minimal_pi5/install/robot_legion_teleop_python/lib/python3.12/site-packages/robot_legion_teleop_python
+copying /home/jo-jo/ros2_ws_minimal_pi5/build/robot_legion_teleop_python/build/lib/robot_legion_teleop_python/fpv_camera_mux.py -> /home/jo-jo/ros2_ws_minimal_pi5/install/robot_legion_teleop_python/lib/python3.12/site-packages/robot_legion_teleop_python
+copying /home/jo-jo/ros2_ws_minimal_pi5/build/robot_legion_teleop_python/build/lib/robot_legion_teleop_python/fpv_control_arbiter.py -> /home/jo-jo/ros2_ws_minimal_pi5/install/robot_legion_teleop_python/lib/python3.12/site-packages/robot_legion_teleop_python
+copying /home/jo-jo/ros2_ws_minimal_pi5/build/robot_legion_teleop_python/build/lib/robot_legion_teleop_python/audit_logger.py -> /home/jo-jo/ros2_ws_minimal_pi5/install/robot_legion_teleop_python/lib/python3.12/site-packages/robot_legion_teleop_python
+copying /home/jo-jo/ros2_ws_minimal_pi5/build/robot_legion_teleop_python/build/lib/robot_legion_teleop_python/reset_gz.py -> /home/jo-jo/ros2_ws_minimal_pi5/install/robot_legion_teleop_python/lib/python3.12/site-packages/robot_legion_teleop_python
+copying /home/jo-jo/ros2_ws_minimal_pi5/build/robot_legion_teleop_python/build/lib/robot_legion_teleop_python/drive_profiles.py -> /home/jo-jo/ros2_ws_minimal_pi5/install/robot_legion_teleop_python/lib/python3.12/site-packages/robot_legion_teleop_python
+copying /home/jo-jo/ros2_ws_minimal_pi5/build/robot_legion_teleop_python/build/lib/robot_legion_teleop_python/usb_camera_node.py -> /home/jo-jo/ros2_ws_minimal_pi5/install/robot_legion_teleop_python/lib/python3.12/site-packages/robot_legion_teleop_python
+copying /home/jo-jo/ros2_ws_minimal_pi5/build/robot_legion_teleop_python/build/lib/robot_legion_teleop_python/__init__.py -> /home/jo-jo/ros2_ws_minimal_pi5/install/robot_legion_teleop_python/lib/python3.12/site-packages/robot_legion_teleop_python
+copying /home/jo-jo/ros2_ws_minimal_pi5/build/robot_legion_teleop_python/build/lib/robot_legion_teleop_python/playbook_helpers.py -> /home/jo-jo/ros2_ws_minimal_pi5/install/robot_legion_teleop_python/lib/python3.12/site-packages/robot_legion_teleop_python
+copying /home/jo-jo/ros2_ws_minimal_pi5/build/robot_legion_teleop_python/build/lib/robot_legion_teleop_python/playbook_strategies.py -> /home/jo-jo/ros2_ws_minimal_pi5/install/robot_legion_teleop_python/lib/python3.12/site-packages/robot_legion_teleop_python
+creating /home/jo-jo/ros2_ws_minimal_pi5/install/robot_legion_teleop_python/lib/python3.12/site-packages/robot_legion_teleop_python/robot_legion_teleop_python
+copying /home/jo-jo/ros2_ws_minimal_pi5/build/robot_legion_teleop_python/build/lib/robot_legion_teleop_python/robot_legion_teleop_python/teleop_legion_key.py -> /home/jo-jo/ros2_ws_minimal_pi5/install/robot_legion_teleop_python/lib/python3.12/site-packages/robot_legion_teleop_python/robot_legion_teleop_python
+copying /home/jo-jo/ros2_ws_minimal_pi5/build/robot_legion_teleop_python/build/lib/robot_legion_teleop_python/robot_legion_teleop_python/motor_driver_node.py -> /home/jo-jo/ros2_ws_minimal_pi5/install/robot_legion_teleop_python/lib/python3.12/site-packages/robot_legion_teleop_python/robot_legion_teleop_python
+copying /home/jo-jo/ros2_ws_minimal_pi5/build/robot_legion_teleop_python/build/lib/robot_legion_teleop_python/robot_legion_teleop_python/unit_executor_omni_action_server.py -> /home/jo-jo/ros2_ws_minimal_pi5/install/robot_legion_teleop_python/lib/python3.12/site-packages/robot_legion_teleop_python/robot_legion_teleop_python
+copying /home/jo-jo/ros2_ws_minimal_pi5/build/robot_legion_teleop_python/build/lib/robot_legion_teleop_python/robot_legion_teleop_python/unit_executor_diffdrive_action_server.py -> /home/jo-jo/ros2_ws_minimal_pi5/install/robot_legion_teleop_python/lib/python3.12/site-packages/robot_legion_teleop_python/robot_legion_teleop_python
+copying /home/jo-jo/ros2_ws_minimal_pi5/build/robot_legion_teleop_python/build/lib/robot_legion_teleop_python/robot_legion_teleop_python/fpv_camera_mux.py -> /home/jo-jo/ros2_ws_minimal_pi5/install/robot_legion_teleop_python/lib/python3.12/site-packages/robot_legion_teleop_python/robot_legion_teleop_python
+copying /home/jo-jo/ros2_ws_minimal_pi5/build/robot_legion_teleop_python/build/lib/robot_legion_teleop_python/robot_legion_teleop_python/fpv_control_arbiter.py -> /home/jo-jo/ros2_ws_minimal_pi5/install/robot_legion_teleop_python/lib/python3.12/site-packages/robot_legion_teleop_python/robot_legion_teleop_python
+copying /home/jo-jo/ros2_ws_minimal_pi5/build/robot_legion_teleop_python/build/lib/robot_legion_teleop_python/robot_legion_teleop_python/reset_gz.py -> /home/jo-jo/ros2_ws_minimal_pi5/install/robot_legion_teleop_python/lib/python3.12/site-packages/robot_legion_teleop_python/robot_legion_teleop_python
+copying /home/jo-jo/ros2_ws_minimal_pi5/build/robot_legion_teleop_python/build/lib/robot_legion_teleop_python/robot_legion_teleop_python/usb_camera_node.py -> /home/jo-jo/ros2_ws_minimal_pi5/install/robot_legion_teleop_python/lib/python3.12/site-packages/robot_legion_teleop_python/robot_legion_teleop_python
+copying /home/jo-jo/ros2_ws_minimal_pi5/build/robot_legion_teleop_python/build/lib/robot_legion_teleop_python/robot_legion_teleop_python/__init__.py -> /home/jo-jo/ros2_ws_minimal_pi5/install/robot_legion_teleop_python/lib/python3.12/site-packages/robot_legion_teleop_python/robot_legion_teleop_python
+copying /home/jo-jo/ros2_ws_minimal_pi5/build/robot_legion_teleop_python/build/lib/robot_legion_teleop_python/robot_legion_teleop_python/playbook_helpers.py -> /home/jo-jo/ros2_ws_minimal_pi5/install/robot_legion_teleop_python/lib/python3.12/site-packages/robot_legion_teleop_python/robot_legion_teleop_python
+copying /home/jo-jo/ros2_ws_minimal_pi5/build/robot_legion_teleop_python/build/lib/robot_legion_teleop_python/terminal_orchestrator.py -> /home/jo-jo/ros2_ws_minimal_pi5/install/robot_legion_teleop_python/lib/python3.12/site-packages/robot_legion_teleop_python
+copying /home/jo-jo/ros2_ws_minimal_pi5/build/robot_legion_teleop_python/build/lib/robot_legion_teleop_python/playbook_contract.py -> /home/jo-jo/ros2_ws_minimal_pi5/install/robot_legion_teleop_python/lib/python3.12/site-packages/robot_legion_teleop_python
+copying /home/jo-jo/ros2_ws_minimal_pi5/build/robot_legion_teleop_python/build/lib/robot_legion_teleop_python/legion_camera_node.py -> /home/jo-jo/ros2_ws_minimal_pi5/install/robot_legion_teleop_python/lib/python3.12/site-packages/robot_legion_teleop_python
+byte-compiling /home/jo-jo/ros2_ws_minimal_pi5/install/robot_legion_teleop_python/lib/python3.12/site-packages/robot_legion_teleop_python/unit_executor_action_server.py to unit_executor_action_server.cpython-312.pyc
+byte-compiling /home/jo-jo/ros2_ws_minimal_pi5/install/robot_legion_teleop_python/lib/python3.12/site-packages/robot_legion_teleop_python/hardware_interface.py to hardware_interface.cpython-312.pyc
+byte-compiling /home/jo-jo/ros2_ws_minimal_pi5/install/robot_legion_teleop_python/lib/python3.12/site-packages/robot_legion_teleop_python/fpv_web_server.py to fpv_web_server.cpython-312.pyc
+byte-compiling /home/jo-jo/ros2_ws_minimal_pi5/install/robot_legion_teleop_python/lib/python3.12/site-packages/robot_legion_teleop_python/teleop_legion_key.py to teleop_legion_key.cpython-312.pyc
+byte-compiling /home/jo-jo/ros2_ws_minimal_pi5/install/robot_legion_teleop_python/lib/python3.12/site-packages/robot_legion_teleop_python/motor_driver_node.py to motor_driver_node.cpython-312.pyc
+byte-compiling /home/jo-jo/ros2_ws_minimal_pi5/install/robot_legion_teleop_python/lib/python3.12/site-packages/robot_legion_teleop_python/control_lock_manager.py to control_lock_manager.cpython-312.pyc
+byte-compiling /home/jo-jo/ros2_ws_minimal_pi5/install/robot_legion_teleop_python/lib/python3.12/site-packages/robot_legion_teleop_python/drive_types.py to drive_types.cpython-312.pyc
+byte-compiling /home/jo-jo/ros2_ws_minimal_pi5/install/robot_legion_teleop_python/lib/python3.12/site-packages/robot_legion_teleop_python/unit_executor_omni_action_server.py to unit_executor_omni_action_server.cpython-312.pyc
+byte-compiling /home/jo-jo/ros2_ws_minimal_pi5/install/robot_legion_teleop_python/lib/python3.12/site-packages/robot_legion_teleop_python/heartbeat_node.py to heartbeat_node.cpython-312.pyc
+byte-compiling /home/jo-jo/ros2_ws_minimal_pi5/install/robot_legion_teleop_python/lib/python3.12/site-packages/robot_legion_teleop_python/setup.py to setup.cpython-312.pyc
+byte-compiling /home/jo-jo/ros2_ws_minimal_pi5/install/robot_legion_teleop_python/lib/python3.12/site-packages/robot_legion_teleop_python/motor_driver_node_OLD.py to motor_driver_node_OLD.cpython-312.pyc
+byte-compiling /home/jo-jo/ros2_ws_minimal_pi5/install/robot_legion_teleop_python/lib/python3.12/site-packages/robot_legion_teleop_python/unit_executor_diffdrive_action_server.py to unit_executor_diffdrive_action_server.cpython-312.pyc
+byte-compiling /home/jo-jo/ros2_ws_minimal_pi5/install/robot_legion_teleop_python/lib/python3.12/site-packages/robot_legion_teleop_python/fpv_camera_mux.py to fpv_camera_mux.cpython-312.pyc
+byte-compiling /home/jo-jo/ros2_ws_minimal_pi5/install/robot_legion_teleop_python/lib/python3.12/site-packages/robot_legion_teleop_python/fpv_control_arbiter.py to fpv_control_arbiter.cpython-312.pyc
+byte-compiling /home/jo-jo/ros2_ws_minimal_pi5/install/robot_legion_teleop_python/lib/python3.12/site-packages/robot_legion_teleop_python/audit_logger.py to audit_logger.cpython-312.pyc
+byte-compiling /home/jo-jo/ros2_ws_minimal_pi5/install/robot_legion_teleop_python/lib/python3.12/site-packages/robot_legion_teleop_python/reset_gz.py to reset_gz.cpython-312.pyc
+byte-compiling /home/jo-jo/ros2_ws_minimal_pi5/install/robot_legion_teleop_python/lib/python3.12/site-packages/robot_legion_teleop_python/drive_profiles.py to drive_profiles.cpython-312.pyc
+byte-compiling /home/jo-jo/ros2_ws_minimal_pi5/install/robot_legion_teleop_python/lib/python3.12/site-packages/robot_legion_teleop_python/usb_camera_node.py to usb_camera_node.cpython-312.pyc
+byte-compiling /home/jo-jo/ros2_ws_minimal_pi5/install/robot_legion_teleop_python/lib/python3.12/site-packages/robot_legion_teleop_python/__init__.py to __init__.cpython-312.pyc
+byte-compiling /home/jo-jo/ros2_ws_minimal_pi5/install/robot_legion_teleop_python/lib/python3.12/site-packages/robot_legion_teleop_python/playbook_helpers.py to playbook_helpers.cpython-312.pyc
+byte-compiling /home/jo-jo/ros2_ws_minimal_pi5/install/robot_legion_teleop_python/lib/python3.12/site-packages/robot_legion_teleop_python/playbook_strategies.py to playbook_strategies.cpython-312.pyc
+byte-compiling /home/jo-jo/ros2_ws_minimal_pi5/install/robot_legion_teleop_python/lib/python3.12/site-packages/robot_legion_teleop_python/robot_legion_teleop_python/teleop_legion_key.py to teleop_legion_key.cpython-312.pyc
+byte-compiling /home/jo-jo/ros2_ws_minimal_pi5/install/robot_legion_teleop_python/lib/python3.12/site-packages/robot_legion_teleop_python/robot_legion_teleop_python/motor_driver_node.py to motor_driver_node.cpython-312.pyc
+byte-compiling /home/jo-jo/ros2_ws_minimal_pi5/install/robot_legion_teleop_python/lib/python3.12/site-packages/robot_legion_teleop_python/robot_legion_teleop_python/unit_executor_omni_action_server.py to unit_executor_omni_action_server.cpython-312.pyc
+byte-compiling /home/jo-jo/ros2_ws_minimal_pi5/install/robot_legion_teleop_python/lib/python3.12/site-packages/robot_legion_teleop_python/robot_legion_teleop_python/unit_executor_diffdrive_action_server.py to unit_executor_diffdrive_action_server.cpython-312.pyc
+byte-compiling /home/jo-jo/ros2_ws_minimal_pi5/install/robot_legion_teleop_python/lib/python3.12/site-packages/robot_legion_teleop_python/robot_legion_teleop_python/fpv_camera_mux.py to fpv_camera_mux.cpython-312.pyc
+byte-compiling /home/jo-jo/ros2_ws_minimal_pi5/install/robot_legion_teleop_python/lib/python3.12/site-packages/robot_legion_teleop_python/robot_legion_teleop_python/fpv_control_arbiter.py to fpv_control_arbiter.cpython-312.pyc
+byte-compiling /home/jo-jo/ros2_ws_minimal_pi5/install/robot_legion_teleop_python/lib/python3.12/site-packages/robot_legion_teleop_python/robot_legion_teleop_python/reset_gz.py to reset_gz.cpython-312.pyc
+byte-compiling /home/jo-jo/ros2_ws_minimal_pi5/install/robot_legion_teleop_python/lib/python3.12/site-packages/robot_legion_teleop_python/robot_legion_teleop_python/usb_camera_node.py to usb_camera_node.cpython-312.pyc
+byte-compiling /home/jo-jo/ros2_ws_minimal_pi5/install/robot_legion_teleop_python/lib/python3.12/site-packages/robot_legion_teleop_python/robot_legion_teleop_python/__init__.py to __init__.cpython-312.pyc
+byte-compiling /home/jo-jo/ros2_ws_minimal_pi5/install/robot_legion_teleop_python/lib/python3.12/site-packages/robot_legion_teleop_python/robot_legion_teleop_python/playbook_helpers.py to playbook_helpers.cpython-312.pyc
+byte-compiling /home/jo-jo/ros2_ws_minimal_pi5/install/robot_legion_teleop_python/lib/python3.12/site-packages/robot_legion_teleop_python/terminal_orchestrator.py to terminal_orchestrator.cpython-312.pyc
+byte-compiling /home/jo-jo/ros2_ws_minimal_pi5/install/robot_legion_teleop_python/lib/python3.12/site-packages/robot_legion_teleop_python/playbook_contract.py to playbook_contract.cpython-312.pyc
+byte-compiling /home/jo-jo/ros2_ws_minimal_pi5/install/robot_legion_teleop_python/lib/python3.12/site-packages/robot_legion_teleop_python/legion_camera_node.py to legion_camera_node.cpython-312.pyc
+running install_data
+creating /home/jo-jo/ros2_ws_minimal_pi5/install/robot_legion_teleop_python/share/ament_index
+creating /home/jo-jo/ros2_ws_minimal_pi5/install/robot_legion_teleop_python/share/ament_index/resource_index
+creating /home/jo-jo/ros2_ws_minimal_pi5/install/robot_legion_teleop_python/share/ament_index/resource_index/packages
+copying resource/robot_legion_teleop_python -> /home/jo-jo/ros2_ws_minimal_pi5/install/robot_legion_teleop_python/share/ament_index/resource_index/packages
+copying package.xml -> /home/jo-jo/ros2_ws_minimal_pi5/install/robot_legion_teleop_python/share/robot_legion_teleop_python
+creating /home/jo-jo/ros2_ws_minimal_pi5/install/robot_legion_teleop_python/share/robot_legion_teleop_python/config
+copying config/robot_profiles.yaml -> /home/jo-jo/ros2_ws_minimal_pi5/install/robot_legion_teleop_python/share/robot_legion_teleop_python/config
+creating /home/jo-jo/ros2_ws_minimal_pi5/install/robot_legion_teleop_python/share/robot_legion_teleop_python/launch
+copying launch/robot_bringup.launch.py -> /home/jo-jo/ros2_ws_minimal_pi5/install/robot_legion_teleop_python/share/robot_legion_teleop_python/launch
+copying launch/robot_minimal.launch.py -> /home/jo-jo/ros2_ws_minimal_pi5/install/robot_legion_teleop_python/share/robot_legion_teleop_python/launch
+running install_egg_info
+Copying ../../build/robot_legion_teleop_python/robot_legion_teleop_python.egg-info to /home/jo-jo/ros2_ws_minimal_pi5/install/robot_legion_teleop_python/lib/python3.12/site-packages/robot_legion_teleop_python-0.1.0-py3.12.egg-info
+running install_scripts
+Installing control_lock_manager script to /home/jo-jo/ros2_ws_minimal_pi5/install/robot_legion_teleop_python/lib/robot_legion_teleop_python
+Installing fpv_camera_mux script to /home/jo-jo/ros2_ws_minimal_pi5/install/robot_legion_teleop_python/lib/robot_legion_teleop_python
+Installing fpv_control_arbiter script to /home/jo-jo/ros2_ws_minimal_pi5/install/robot_legion_teleop_python/lib/robot_legion_teleop_python
+Installing heartbeat_node script to /home/jo-jo/ros2_ws_minimal_pi5/install/robot_legion_teleop_python/lib/robot_legion_teleop_python
+Installing motor_driver_node script to /home/jo-jo/ros2_ws_minimal_pi5/install/robot_legion_teleop_python/lib/robot_legion_teleop_python
+Installing teleop_legion_key script to /home/jo-jo/ros2_ws_minimal_pi5/install/robot_legion_teleop_python/lib/robot_legion_teleop_python
+Installing terminal_orchestrator script to /home/jo-jo/ros2_ws_minimal_pi5/install/robot_legion_teleop_python/lib/robot_legion_teleop_python
+Installing unit_executor_action_server script to /home/jo-jo/ros2_ws_minimal_pi5/install/robot_legion_teleop_python/lib/robot_legion_teleop_python
+Installing usb_camera_node script to /home/jo-jo/ros2_ws_minimal_pi5/install/robot_legion_teleop_python/lib/robot_legion_teleop_python
+writing list of installed files to '/home/jo-jo/ros2_ws_minimal_pi5/build/robot_legion_teleop_python/install.log'

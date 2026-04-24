@@ -1,0 +1,7 @@
+Metadata-Version: 2.1
+Name: robot-legion-teleop-python
+Version: 0.1.0
+Summary: Robot legion teleop + FPV + stand-in autonomy executors.
+Maintainer: Vitruvian Systems
+Maintainer-email: 
+License: LicenseRef-Proprietary

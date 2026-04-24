@@ -1,0 +1,10 @@
+[console_scripts]
+control_lock_manager = robot_legion_teleop_python.control_lock_manager:main
+fpv_camera_mux = robot_legion_teleop_python.fpv_camera_mux:main
+fpv_control_arbiter = robot_legion_teleop_python.fpv_control_arbiter:main
+heartbeat_node = robot_legion_teleop_python.heartbeat_node:main
+motor_driver_node = robot_legion_teleop_python.motor_driver_node:main
+teleop_legion_key = robot_legion_teleop_python.teleop_legion_key:main
+terminal_orchestrator = robot_legion_teleop_python.terminal_orchestrator:main
+unit_executor_action_server = robot_legion_teleop_python.unit_executor_action_server:main
+usb_camera_node = robot_legion_teleop_python.usb_camera_node:main
