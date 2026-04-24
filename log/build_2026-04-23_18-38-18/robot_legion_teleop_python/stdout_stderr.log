@@ -1,0 +1,27 @@
+running egg_info
+writing ../../build/robot_legion_teleop_python/robot_legion_teleop_python.egg-info/PKG-INFO
+writing dependency_links to ../../build/robot_legion_teleop_python/robot_legion_teleop_python.egg-info/dependency_links.txt
+writing entry points to ../../build/robot_legion_teleop_python/robot_legion_teleop_python.egg-info/entry_points.txt
+writing requirements to ../../build/robot_legion_teleop_python/robot_legion_teleop_python.egg-info/requires.txt
+writing top-level names to ../../build/robot_legion_teleop_python/robot_legion_teleop_python.egg-info/top_level.txt
+reading manifest file '../../build/robot_legion_teleop_python/robot_legion_teleop_python.egg-info/SOURCES.txt'
+writing manifest file '../../build/robot_legion_teleop_python/robot_legion_teleop_python.egg-info/SOURCES.txt'
+running build
+running build_py
+running install
+running install_lib
+running install_data
+running install_egg_info
+removing '/home/jo-jo/ros2_ws_minimal_pi5/install/robot_legion_teleop_python/lib/python3.12/site-packages/robot_legion_teleop_python-0.1.0-py3.12.egg-info' (and everything under it)
+Copying ../../build/robot_legion_teleop_python/robot_legion_teleop_python.egg-info to /home/jo-jo/ros2_ws_minimal_pi5/install/robot_legion_teleop_python/lib/python3.12/site-packages/robot_legion_teleop_python-0.1.0-py3.12.egg-info
+running install_scripts
+Installing control_lock_manager script to /home/jo-jo/ros2_ws_minimal_pi5/install/robot_legion_teleop_python/lib/robot_legion_teleop_python
+Installing fpv_camera_mux script to /home/jo-jo/ros2_ws_minimal_pi5/install/robot_legion_teleop_python/lib/robot_legion_teleop_python
+Installing fpv_control_arbiter script to /home/jo-jo/ros2_ws_minimal_pi5/install/robot_legion_teleop_python/lib/robot_legion_teleop_python
+Installing heartbeat_node script to /home/jo-jo/ros2_ws_minimal_pi5/install/robot_legion_teleop_python/lib/robot_legion_teleop_python
+Installing motor_driver_node script to /home/jo-jo/ros2_ws_minimal_pi5/install/robot_legion_teleop_python/lib/robot_legion_teleop_python
+Installing teleop_legion_key script to /home/jo-jo/ros2_ws_minimal_pi5/install/robot_legion_teleop_python/lib/robot_legion_teleop_python
+Installing terminal_orchestrator script to /home/jo-jo/ros2_ws_minimal_pi5/install/robot_legion_teleop_python/lib/robot_legion_teleop_python
+Installing unit_executor_action_server script to /home/jo-jo/ros2_ws_minimal_pi5/install/robot_legion_teleop_python/lib/robot_legion_teleop_python
+Installing usb_camera_node script to /home/jo-jo/ros2_ws_minimal_pi5/install/robot_legion_teleop_python/lib/robot_legion_teleop_python
+writing list of installed files to '/home/jo-jo/ros2_ws_minimal_pi5/build/robot_legion_teleop_python/install.log'
