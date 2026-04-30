@@ -49,10 +49,10 @@ class MotorDriverNode(Node):
 
         # GPIO pins (BCM)
         self.EN_A = 12
-        self.IN1 = 17
-        self.IN2 = 27
-        self.IN3 = 22
-        self.IN4 = 23
+        self.IN1 = 23
+        self.IN2 = 22
+        self.IN3 = 27
+        self.IN4 = 17
         self.EN_B = 13
 
         self.left_motor = None
