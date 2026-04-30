@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+print("Starting motor_driver_node...")
 import time
 import getpass
 
@@ -29,6 +30,7 @@ except (ImportError, Exception) as e:
 
 class MotorDriverNode(Node):
     def __init__(self):
+        print("super init started...")
         super().__init__("motor_driver_node")
 
         # Robot naming
