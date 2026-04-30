@@ -59,8 +59,10 @@ class MotorDriverNode(Node):
         self.right_motor = None
 
         if GPIO_AVAILABLE:
+            print("GPIO available, setting up motor control...")
             self._setup_gpio()
         else:
+            print("GPIO unavailable, throwing error")
             self.get_logger().warn("gpiozero not available. Motors will NOT move.")
 
         # Subscriber
@@ -81,6 +83,8 @@ class MotorDriverNode(Node):
     # --------------------------------------------------
 
     def _setup_gpio(self):
+        print("Setting up GPIO for motor control...")
+        print(f"Motor pins - EN_A: {self.EN_A}, IN1: {self.IN1}, IN2: {self.IN2}, IN3: {self.IN3}, IN4: {self.IN4}, EN_B: {self.EN_B}")
         self.left_motor = Motor(forward=self.IN1, backward=self.IN2, enable=self.EN_A, pwm=True)
         self.right_motor = Motor(forward=self.IN3, backward=self.IN4, enable=self.EN_B, pwm=True)
 
