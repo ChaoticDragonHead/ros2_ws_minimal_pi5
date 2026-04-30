@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-self.get_logger().info("Starting motor_driver_node...")
+print("Starting motor_driver_node...", flush=True)
 import time
 import getpass
 
@@ -15,22 +15,22 @@ from geometry_msgs.msg import Twist
 #    GPIO_AVAILABLE = False
 
 #Use gpiozero instead, which is more modern and easier to use
-print("Attempting to import gpiozero for motor control...")
+print("Attempting to import gpiozero for motor control...", flush=True)
 try:
     from gpiozero import Motor
     # Test if we can actually create a motor (checks for GPIO hardware access)
     test_motor = Motor(17, 27)
     test_motor.close()
     GPIO_AVAILABLE = True
-    print("gpiozero is available for motor control.")
+    print("gpiozero is available for motor control.", flush=True)
 except (ImportError, Exception) as e:
     GPIO_AVAILABLE = False
-    print("gpio init failed")
+    print("gpio init failed", flush=True)
     print(f"GPIO not available: {e}")
 
 class MotorDriverNode(Node):
     def __init__(self):
-        print("super init started...")
+        self.get_logger().info("super init started...")
         super().__init__("motor_driver_node")
 
         # Robot naming
@@ -59,10 +59,10 @@ class MotorDriverNode(Node):
         self.right_motor = None
 
         if GPIO_AVAILABLE:
-            print("GPIO available, setting up motor control...")
+            self.get_logger().info("GPIO available, setting up motor control...")
             self._setup_gpio()
         else:
-            print("GPIO unavailable, throwing error")
+            self.get_logger().warn("GPIO unavailable, throwing error")
             self.get_logger().warn("gpiozero not available. Motors will NOT move.")
 
         # Subscriber
@@ -83,8 +83,8 @@ class MotorDriverNode(Node):
     # --------------------------------------------------
 
     def _setup_gpio(self):
-        print("Setting up GPIO for motor control...")
-        print(f"Motor pins - EN_A: {self.EN_A}, IN1: {self.IN1}, IN2: {self.IN2}, IN3: {self.IN3}, IN4: {self.IN4}, EN_B: {self.EN_B}")
+        self.get_logger().info("Setting up GPIO for motor control...")
+        self.get_logger().info(f"Motor pins - EN_A: {self.EN_A}, IN1: {self.IN1}, IN2: {self.IN2}, IN3: {self.IN3}, IN4: {self.IN4}, EN_B: {self.EN_B}")
         self.left_motor = Motor(forward=self.IN1, backward=self.IN2, enable=self.EN_A, pwm=True)
         self.right_motor = Motor(forward=self.IN3, backward=self.IN4, enable=self.EN_B, pwm=True)
 
