@@ -14,6 +14,7 @@ from geometry_msgs.msg import Twist
 #    GPIO_AVAILABLE = False
 
 #Use gpiozero instead, which is more modern and easier to use
+print("Attempting to import gpiozero for motor control...")
 try:
     from gpiozero import Motor
     # Test if we can actually create a motor (checks for GPIO hardware access)
