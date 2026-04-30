@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-print("Starting motor_driver_node...")
+self.get_logger().info("Starting motor_driver_node...")
 import time
 import getpass
 
