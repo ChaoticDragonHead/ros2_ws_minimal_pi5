@@ -16,9 +16,13 @@ from geometry_msgs.msg import Twist
 #Use gpiozero instead, which is more modern and easier to use
 try:
     from gpiozero import Motor
+    # Test if we can actually create a motor (checks for GPIO hardware access)
+    test_motor = Motor(17, 27)
+    test_motor.close()
     GPIO_AVAILABLE = True
-except ImportError:
+except (ImportError, Exception) as e:
     GPIO_AVAILABLE = False
+    print(f"GPIO not available: {e}")
 
 class MotorDriverNode(Node):
     def __init__(self):

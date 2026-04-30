@@ -20,6 +20,7 @@ try:
     test_motor = Motor(17, 27)
     test_motor.close()
     GPIO_AVAILABLE = True
+    print("gpiozero is available for motor control.")
 except (ImportError, Exception) as e:
     GPIO_AVAILABLE = False
     print(f"GPIO not available: {e}")
