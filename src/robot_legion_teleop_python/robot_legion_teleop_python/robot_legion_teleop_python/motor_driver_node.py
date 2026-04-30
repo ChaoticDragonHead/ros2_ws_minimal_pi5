@@ -23,6 +23,7 @@ try:
     print("gpiozero is available for motor control.")
 except (ImportError, Exception) as e:
     GPIO_AVAILABLE = False
+    print("gpio init failed")
     print(f"GPIO not available: {e}")
 
 class MotorDriverNode(Node):
