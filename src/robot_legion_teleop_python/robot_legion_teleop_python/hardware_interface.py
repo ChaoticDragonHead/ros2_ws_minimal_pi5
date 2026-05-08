@@ -34,11 +34,21 @@ from typing import Dict, Optional
 import logging
 import time
 
+# Try lgpio first (for Pi5 compatibility), fall back to RPi.GPIO for older Pi
+GPIO_AVAILABLE = False
+GPIO_LIBRARY = None
+
 try:
-    import RPi.GPIO as GPIO  # type: ignore
+    import lgpio  # type: ignore
     GPIO_AVAILABLE = True
-except Exception:
-    GPIO_AVAILABLE = False
+    GPIO_LIBRARY = "lgpio"
+except ImportError:
+    try:
+        import RPi.GPIO as GPIO  # type: ignore
+        GPIO_AVAILABLE = True
+        GPIO_LIBRARY = "RPi.GPIO"
+    except ImportError:
+        GPIO_AVAILABLE = False
 
 LOG = logging.getLogger("hardware_interface")
 
@@ -77,10 +87,17 @@ class HardwareInterface:
             or self.gpio_map.get("right_polarity_invert")
         )
 
+        self._gpio_library = None
+        self._lgpio_handle = None
+        self._gpio_objects = {}
+        
         if GPIO_AVAILABLE and self.gpio_map:
             try:
-                self._setup_gpio()
-                LOG.info("GPIO hardware interface initialized")
+                if GPIO_LIBRARY == "lgpio":
+                    self._setup_lgpio()
+                else:
+                    self._setup_rpi_gpio()
+                LOG.info("GPIO hardware interface initialized using %s", GPIO_LIBRARY)
                 LOG.info("GPIO map keys: %s; invert_left=%s invert_right=%s", list(self.gpio_map.keys()), self.invert_left, self.invert_right)
             except Exception as e:
                 LOG.warning("GPIO init failed: %s", e)
@@ -98,7 +115,71 @@ class HardwareInterface:
         else:
             LOG.warning("GPIO map empty - using mock hardware interface")
 
-    def _setup_gpio(self):
+    def _setup_lgpio(self):
+        """Initialize GPIO using lgpio library (Raspberry Pi 5 compatible)"""
+        import lgpio
+        
+        self._gpio_library = "lgpio"
+        self._lgpio_handle = lgpio.gpiochip_open(0)
+        
+        # collect pins we expect for a 2-channel H-bridge
+        pins = [
+            self.gpio_map.get("in1_left"),
+            self.gpio_map.get("in2_left"),
+            self.gpio_map.get("in1_right"),
+            self.gpio_map.get("in2_right"),
+            self.gpio_map.get("en_left"),
+            self.gpio_map.get("en_right"),
+            self.gpio_map.get("fl_in1"),
+            self.gpio_map.get("fl_in2"),
+            self.gpio_map.get("fr_in1"),
+            self.gpio_map.get("fr_in2"),
+            self.gpio_map.get("rl_in1"),
+            self.gpio_map.get("rl_in2"),
+            self.gpio_map.get("rr_in1"),
+            self.gpio_map.get("rr_in2"),
+            self.gpio_map.get("fl_pwm"),
+            self.gpio_map.get("fr_pwm"),
+            self.gpio_map.get("rl_pwm"),
+            self.gpio_map.get("rr_pwm"),
+        ]
+        pins = [p for p in pins if p is not None]
+        
+        for pin in pins:
+            lgpio.gpio_claim_output(self._lgpio_handle, pin)
+        
+        # Setup PWM channels
+        if self.gpio_map.get("en_left") is not None:
+            self.left_pwm = self.gpio_map.get("en_left")
+            lgpio.tx_pwm(self._lgpio_handle, self.left_pwm, self.pwm_hz, 0)
+        
+        if self.gpio_map.get("en_right") is not None:
+            self.right_pwm = self.gpio_map.get("en_right")
+            lgpio.tx_pwm(self._lgpio_handle, self.right_pwm, self.pwm_hz, 0)
+        
+        if self.gpio_map.get("fl_pwm") is not None:
+            self.fl_pwm = self.gpio_map.get("fl_pwm")
+            lgpio.tx_pwm(self._lgpio_handle, self.fl_pwm, self.pwm_hz, 0)
+        
+        if self.gpio_map.get("fr_pwm") is not None:
+            self.fr_pwm = self.gpio_map.get("fr_pwm")
+            lgpio.tx_pwm(self._lgpio_handle, self.fr_pwm, self.pwm_hz, 0)
+        
+        if self.gpio_map.get("rl_pwm") is not None:
+            self.rl_pwm = self.gpio_map.get("rl_pwm")
+            lgpio.tx_pwm(self._lgpio_handle, self.rl_pwm, self.pwm_hz, 0)
+        
+        if self.gpio_map.get("rr_pwm") is not None:
+            self.rr_pwm = self.gpio_map.get("rr_pwm")
+            lgpio.tx_pwm(self._lgpio_handle, self.rr_pwm, self.pwm_hz, 0)
+        
+        self._mock = False
+
+    def _setup_rpi_gpio(self):
+        """Initialize GPIO using RPi.GPIO library (older Raspberry Pi)"""
+        import RPi.GPIO as GPIO
+        
+        self._gpio_library = "RPi.GPIO"
         GPIO.setmode(GPIO.BCM)
         GPIO.setwarnings(False)
 
@@ -208,6 +289,41 @@ class HardwareInterface:
             self._cur_left_duty = float(left_duty)
             self._cur_right_duty = float(right_duty)
 
+        if self._gpio_library == "lgpio":
+            self._set_motor_lgpio(left_dir, right_dir)
+        else:
+            self._set_motor_rpi_gpio(left_dir, right_dir)
+
+    def _set_motor_lgpio(self, left_dir: int, right_dir: int):
+        """Set motor outputs using lgpio"""
+        import lgpio
+        
+        # left motor pins
+        in1 = self.gpio_map.get("in1_left")
+        in2 = self.gpio_map.get("in2_left")
+        if in1 is not None and in2 is not None:
+            lgpio.gpio_write(self._lgpio_handle, in1, 1 if left_dir > 0 else 0)
+            lgpio.gpio_write(self._lgpio_handle, in2, 0 if left_dir > 0 else 1)
+
+        # right motor pins
+        in3 = self.gpio_map.get("in1_right")
+        in4 = self.gpio_map.get("in2_right")
+        if in3 is not None and in4 is not None:
+            lgpio.gpio_write(self._lgpio_handle, in3, 1 if right_dir > 0 else 0)
+            lgpio.gpio_write(self._lgpio_handle, in4, 0 if right_dir > 0 else 1)
+
+        # set PWM duty
+        if self.left_pwm is not None:
+            duty_pct = max(0.0, min(100.0, float(self._cur_left_duty)))
+            lgpio.tx_pwm(self._lgpio_handle, self.left_pwm, self.pwm_hz, duty_pct)
+        if self.right_pwm is not None:
+            duty_pct = max(0.0, min(100.0, float(self._cur_right_duty)))
+            lgpio.tx_pwm(self._lgpio_handle, self.right_pwm, self.pwm_hz, duty_pct)
+
+    def _set_motor_rpi_gpio(self, left_dir: int, right_dir: int):
+        """Set motor outputs using RPi.GPIO"""
+        import RPi.GPIO as GPIO
+        
         # left motor pins
         in1 = self.gpio_map.get("in1_left")
         in2 = self.gpio_map.get("in2_left")
@@ -284,7 +400,44 @@ class HardwareInterface:
             self._cur_rl_duty = float(rl_duty)
             self._cur_rr_duty = float(rr_duty)
 
-        # Direction pins
+        if self._gpio_library == "lgpio":
+            self._set_mecanum_lgpio(fl_dir, fr_dir, rl_dir, rr_dir)
+        else:
+            self._set_mecanum_rpi_gpio(fl_dir, fr_dir, rl_dir, rr_dir)
+
+    def _set_mecanum_lgpio(self, fl_dir: int, fr_dir: int, rl_dir: int, rr_dir: int):
+        """Set mecanum motor outputs using lgpio"""
+        import lgpio
+        
+        def _set_dir_lgpio(pin1, pin2, direction):
+            if pin1 is None or pin2 is None:
+                return
+            lgpio.gpio_write(self._lgpio_handle, pin1, 1 if direction > 0 else 0)
+            lgpio.gpio_write(self._lgpio_handle, pin2, 0 if direction > 0 else 1)
+
+        _set_dir_lgpio(self.gpio_map.get("fl_in1"), self.gpio_map.get("fl_in2"), fl_dir)
+        _set_dir_lgpio(self.gpio_map.get("fr_in1"), self.gpio_map.get("fr_in2"), fr_dir)
+        _set_dir_lgpio(self.gpio_map.get("rl_in1"), self.gpio_map.get("rl_in2"), rl_dir)
+        _set_dir_lgpio(self.gpio_map.get("rr_in1"), self.gpio_map.get("rr_in2"), rr_dir)
+
+        # PWM duty
+        if self.fl_pwm is not None:
+            duty_pct = max(0.0, min(100.0, float(self._cur_fl_duty)))
+            lgpio.tx_pwm(self._lgpio_handle, self.fl_pwm, self.pwm_hz, duty_pct)
+        if self.fr_pwm is not None:
+            duty_pct = max(0.0, min(100.0, float(self._cur_fr_duty)))
+            lgpio.tx_pwm(self._lgpio_handle, self.fr_pwm, self.pwm_hz, duty_pct)
+        if self.rl_pwm is not None:
+            duty_pct = max(0.0, min(100.0, float(self._cur_rl_duty)))
+            lgpio.tx_pwm(self._lgpio_handle, self.rl_pwm, self.pwm_hz, duty_pct)
+        if self.rr_pwm is not None:
+            duty_pct = max(0.0, min(100.0, float(self._cur_rr_duty)))
+            lgpio.tx_pwm(self._lgpio_handle, self.rr_pwm, self.pwm_hz, duty_pct)
+
+    def _set_mecanum_rpi_gpio(self, fl_dir: int, fr_dir: int, rl_dir: int, rr_dir: int):
+        """Set mecanum motor outputs using RPi.GPIO"""
+        import RPi.GPIO as GPIO
+        
         def _set_dir(pin1, pin2, direction):
             if pin1 is None or pin2 is None:
                 return
@@ -311,6 +464,40 @@ class HardwareInterface:
             LOG.debug("MOCK stop called")
             return
         try:
+            if self._gpio_library == "lgpio":
+                self._stop_lgpio()
+            else:
+                self._stop_rpi_gpio()
+        except Exception as e:
+            LOG.warning("Error cleaning up GPIO: %s", e)
+
+    def _stop_lgpio(self):
+        """Stop PWM and cleanup lgpio"""
+        import lgpio
+        
+        try:
+            if self.left_pwm is not None:
+                lgpio.tx_pwm(self._lgpio_handle, self.left_pwm, 0, 0)
+            if self.right_pwm is not None:
+                lgpio.tx_pwm(self._lgpio_handle, self.right_pwm, 0, 0)
+            if getattr(self, "fl_pwm", None) is not None:
+                lgpio.tx_pwm(self._lgpio_handle, self.fl_pwm, 0, 0)
+            if getattr(self, "fr_pwm", None) is not None:
+                lgpio.tx_pwm(self._lgpio_handle, self.fr_pwm, 0, 0)
+            if getattr(self, "rl_pwm", None) is not None:
+                lgpio.tx_pwm(self._lgpio_handle, self.rl_pwm, 0, 0)
+            if getattr(self, "rr_pwm", None) is not None:
+                lgpio.tx_pwm(self._lgpio_handle, self.rr_pwm, 0, 0)
+            if self._lgpio_handle is not None:
+                lgpio.gpiochip_close(self._lgpio_handle)
+        except Exception as e:
+            LOG.warning("Error cleaning up lgpio: %s", e)
+
+    def _stop_rpi_gpio(self):
+        """Stop PWM and cleanup RPi.GPIO"""
+        import RPi.GPIO as GPIO
+        
+        try:
             if self.left_pwm is not None:
                 self.left_pwm.stop()
             if self.right_pwm is not None:
@@ -325,4 +512,4 @@ class HardwareInterface:
                 self.rr_pwm.stop()
             GPIO.cleanup()
         except Exception as e:
-            LOG.warning("Error cleaning up GPIO: %s", e)
+            LOG.warning("Error cleaning up RPi.GPIO: %s", e)
